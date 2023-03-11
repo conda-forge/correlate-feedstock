@@ -1,11 +1,11 @@
-About correlate
-===============
+About correlate-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/correlate-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/larryhastings/correlate/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/correlate-feedstock/blob/main/LICENSE.txt)
 
 Summary: Correlates two sets of data by matching
 
