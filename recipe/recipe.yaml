@@ -1,0 +1,43 @@
+schema_version: 1
+
+context:
+  name: correlate
+  version: "1.2"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/correlate-${{ version }}.tar.gz
+  sha256: 693aef0b7468136bb77c3d200ff3f2051b4baa0d6447e7f73033b5f4cefa0f13
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - flit
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - correlate
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Correlates two sets of data by matching
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/larryhastings/correlate/
+
+extra:
+  recipe-maintainers:
+    - thewchan
